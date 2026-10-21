@@ -107,13 +107,18 @@ export function CodeBlock({
     copyState === "copied" ? "Copied" : copyState === "failed" ? "Failed" : "Copy";
 
   return (
-    <figure className="mt-4 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50">
-      <figcaption className="flex items-center justify-between gap-3 border-b border-neutral-200 bg-white px-3 py-1.5">
-        <span className="flex items-center gap-2 text-xs">
+    <figure className="terminal mt-4 overflow-hidden rounded-xl border border-neutral-800 bg-black shadow-[0_0_0_1px_rgba(74,222,128,0.08)]">
+      <figcaption className="flex items-center justify-between gap-3 border-b border-neutral-800 bg-neutral-950 px-3 py-1.5">
+        <span className="flex items-center gap-2.5 font-mono text-xs">
+          <span aria-hidden="true" className="flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
+          </span>
           {title ? (
-            <span className="font-medium text-neutral-800">{title}</span>
+            <span className="font-medium text-neutral-300">{title}</span>
           ) : null}
-          <span className="rounded bg-neutral-100 px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-wide text-neutral-600">
+          <span className="rounded border border-neutral-800 bg-neutral-900 px-1.5 py-0.5 text-[11px] uppercase tracking-wide text-green-400">
             {language}
           </span>
         </span>
@@ -122,7 +127,7 @@ export function CodeBlock({
             type="button"
             onClick={handleCopy}
             aria-label={`Copy ${title ? `${title} ` : ""}${language} code to clipboard`}
-            className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-xs font-medium text-neutral-600 transition hover:border-neutral-200 hover:bg-neutral-50 hover:text-neutral-900"
+            className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-transparent px-2 py-1 font-mono text-xs font-medium text-neutral-400 transition hover:border-green-500/40 hover:bg-neutral-900 hover:text-green-400"
           >
             {copyState === "copied" ? <CheckIcon /> : <CopyIcon />}
             <span>{buttonLabel}</span>
@@ -132,7 +137,7 @@ export function CodeBlock({
       <pre
         tabIndex={0}
         aria-label={`${title ? `${title} ` : ""}${language} code`}
-        className="overflow-x-auto px-4 py-3.5 font-mono text-[13px] leading-6"
+        className="overflow-x-auto bg-black px-4 py-3.5 font-mono text-[13px] leading-6"
       >
         <code
           className={`hljs language-${language}`}

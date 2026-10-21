@@ -68,28 +68,39 @@ body {
   }
 }
 
-/* ---------- Syntax highlighting (highlight.js tokens, light theme) ---------- */
+/* ---------- Syntax highlighting (highlight.js tokens, terminal theme) ---------- */
 
 .hljs {
-  color: #24292f;
+  color: #4ade80; /* phosphor green */
+  background: transparent;
+}
+
+.terminal pre :focus-visible,
+.terminal pre:focus-visible {
+  outline-color: #4ade80;
+}
+
+.terminal ::selection {
+  background: rgba(74, 222, 128, 0.3);
+  color: #ffffff;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #5b6472;
+  color: #6b7280;
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #6639ba;
+  color: #f472b6;
 }
 
 .hljs-string,
 .hljs-regexp,
 .hljs-template-variable {
-  color: #0a3069;
+  color: #fde047;
 }
 
 .hljs-number,
@@ -97,30 +108,30 @@ body {
 .hljs-attribute,
 .hljs-variable,
 .hljs-symbol {
-  color: #0550ae;
+  color: #67e8f9;
 }
 
 .hljs-title,
 .hljs-title.function_,
 .hljs-section {
-  color: #8250df;
+  color: #a5b4fc;
 }
 
 .hljs-name,
 .hljs-tag {
-  color: #116329;
+  color: #86efac;
 }
 
 .hljs-built_in,
 .hljs-title.class_ {
-  color: #953800;
+  color: #fdba74;
 }
 
 .hljs-punctuation,
 .hljs-operator {
-  color: #57606a;
+  color: #9ca3af;
 }
 
 .hljs-subst {
-  color: #24292f;
+  color: #4ade80;
 }
